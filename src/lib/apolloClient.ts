@@ -1,7 +1,7 @@
 import { ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 
-// 创建 HTTP 链接
+// 创建 HTTP 链接11
 const httpLink = createHttpLink({
   uri:
     process.env.REACT_APP_GRAPHQL_ENDPOINT ||
