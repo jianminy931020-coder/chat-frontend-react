@@ -1,14 +1,14 @@
-import { gql } from '@apollo/client';
+import { gql } from '@apollo/client'
 
 export const SEND_MESSAGE = gql`
-  mutation SendMessage($message: String!) {
-    sendMessage(message: $message) {
+  mutation SendMessage($userId: String!, $message: String!) {
+    sendMessage(userId: $userId, message: $message) {
       success
       message
       response
     }
   }
-`;
+`
 
 export const GET_CHAT_HISTORY = gql`
   query GetChatHistory {
@@ -19,4 +19,4 @@ export const GET_CHAT_HISTORY = gql`
       timestamp
     }
   }
-`;
+`
