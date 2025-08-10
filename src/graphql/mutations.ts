@@ -11,7 +11,7 @@ export const SEND_MESSAGE = gql`
 `
 
 export const GET_CHAT_HISTORY = gql`
-  query GetChatHistory {
+  query GetChatHistory($userId: String!) {
     chatHistory(userId: $userId) {
       id
       message
