@@ -55,7 +55,7 @@ const Chat: React.FC = () => {
 
     try {
       const { data } = await sendMessage({
-        variables: { message: inputValue ,userId: FIXED_USER_ID},
+        variables: { message: inputValue ,userId: "0b4a75d04715c61602dc87a680b0d8f5"},
       });
 
       if (data?.sendMessage.success) {
