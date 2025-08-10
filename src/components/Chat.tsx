@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useMutation } from '@apollo/client';
 import { SEND_MESSAGE } from '../graphql/mutations';
-
+const FIXED_USER_ID = '0b4a75d04715c61602dc87a680b0d8f5';
 interface Message {
   id: string;
   content: string;
@@ -18,6 +18,7 @@ interface SendMessageResponse {
 }
 
 interface SendMessageVariables {
+  userId: string;
   message: string;
 }
 
@@ -54,7 +55,7 @@ const Chat: React.FC = () => {
 
     try {
       const { data } = await sendMessage({
-        variables: { message: inputValue },
+        variables: { message: inputValue ,userId: FIXED_USER_ID},
       });
 
       if (data?.sendMessage.success) {
