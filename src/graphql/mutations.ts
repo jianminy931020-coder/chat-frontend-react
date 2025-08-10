@@ -12,7 +12,7 @@ export const SEND_MESSAGE = gql`
 
 export const GET_CHAT_HISTORY = gql`
   query GetChatHistory {
-    chatHistory {
+    chatHistory(userId: $userId) {
       id
       message
       response
