@@ -55,9 +55,9 @@ const Chat: React.FC = () => {
 
     try {
       const { data } = await sendMessage({
-        variables: { message: inputValue ,userId: "0b4a75d04715c61602dc87a680b0d8f5"},
+        variables: {userId: "0b4a75d04715c61602dc87a680b0d8f5", message: inputValue },
       });
-
+  
       if (data?.sendMessage.success) {
         const aiMessage: Message = {
           id: (Date.now() + 1).toString(),
